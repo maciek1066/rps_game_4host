@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% load static %}
+    {% if round_count < 3 %}
+<p>{{ user.username }}, Playing against {{ game.creator_id.username }}</p>
+    {% endif %}
+{% for round in rounds %}
+    <a href="{{ game.id }}/round/{{ round.id }}"><input type="button" value="Pick!"></a>
+{% endfor %}
+
+{% if round_count ==  3 and game.completed == True %}
+        <a href="{{ game.id }}/results/"><input type="button" value="see results"></a>
+{% endif %}
+
+{% for round in rounds_completed %}
+    {% if round.opponent_move != None and round.creator_move != None %}
+    <p>you played: <b>{{ round.get_opponent_move_display }}</b> vs
+        {{ creator.username }}: <b>{{ round.get_creator_move_display }}</b></p>
+    {% endif %}
+{% endfor %}
+<script type="text/javascript" src="{% static 'js/refresh_faster.js' %}"></script>
+{% endblock %}
+
+

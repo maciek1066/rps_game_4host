@@ -1,1 +1,2 @@
-# rest-api-project
+# rps_game
+multiplayer rock paper scissors game 
