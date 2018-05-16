@@ -2,4 +2,4 @@
 multiplayer rock paper scissors game 
 
 play here:
-maciekkot.pythonanywhere.com
+http://maciekkot.pythonanywhere.com
